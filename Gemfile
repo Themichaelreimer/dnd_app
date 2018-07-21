@@ -31,6 +31,7 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'bootstrap', '~>4.1.1'
 gem 'paperclip'
+gem 'bcrypt'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
