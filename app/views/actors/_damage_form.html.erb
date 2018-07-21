@@ -1,0 +1,4 @@
+<%= form_for actor, :url => {action: "damage"} do |f|%>
+  Enter Damage: <%= f.text_field :dmg, autocomplete: :off  %>
+  <%= f.hidden_field :actor_obj, value: actor.id %>
+<% end %>

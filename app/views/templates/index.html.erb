@@ -1,0 +1,23 @@
+
+<h1> Monster Templates</h1>
+
+  <% if current_user%>
+    <div>
+      <h1>Favourites</h1>
+        <div class="container-fluid row" style="width:90%;">
+          <% current_user.templates.each do |template|%>
+            <%= render partial: 'templates', locals: {template: template}%>
+          <% end %>
+        </div>
+    <div>
+  <% end %>
+
+  <div>
+    <h1>Catalog</h1>
+      <div class="container-fluid row" style="width:90%;">
+        <% @templates.each do |template|%>
+          <%= render partial: 'templates', locals: {template: template}%>
+        <% end %>
+      </div>
+    </div>
+  </div>

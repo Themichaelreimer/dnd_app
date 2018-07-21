@@ -1,0 +1,49 @@
+<div class="card main-card border-primary mb-3 col-md-4" style="width:600px;">
+
+  <div class="card-header">
+    <h4 class="card-title"><%=@template.name%>; Lv: <%=@template.challenge%> </h4>
+    <h5 class="card-subtitle mb-2 text-muted"><%= @template.desc%></h5>
+  </div>
+
+  <div class = "card-body">
+
+    <div class="card">
+      <% if @template.image %>
+        <%= image_tag(@template.image.url(:large))%>
+      <% else %>
+        <img src="public/404.gif" height=512px height=512px alt="image not found">
+      <% end %>
+    </div>
+
+    <div class="row">
+      <h5 class="col-md-4">HP: <%= @template.hp_s %></h5>
+      <h5 class="col-md-4">AC: <%= @template.ac_s %></h5>
+      <h5 class="col-md-4">Speed: <%= @template.speed %></h5>
+    </div>
+
+    <div class="row">
+      <h5 class="col-md-2">STR:<%= @template.str_s %></h5>
+      <h5 class="col-md-2">DEX:<%= @template.dex_s %></h5>
+      <h5 class="col-md-2">CON:<%= @template.con_s %></h5>
+      <h5 class="col-md-2">INT:<%= @template.int_s %></h5>
+      <h5 class="col-md-2">WIS:<%= @template.wis_s %></h5>
+      <h5 class="col-md-2">CHA:<%= @template.cha_s %></h5>
+    </div>
+
+    <div>
+      <h3>Actions</h3>
+      <%= @template.actions%>
+    </div>
+
+    <div>
+      <h3>Saving Throws</h3>
+      <%= @template.saving_throws%>
+    </div>
+
+    <ul class="row" style:"display:inline">
+      <span> <%= render "card-footer", template: @template %> </span>
+    </ul>
+
+
+  </div>
+</div>

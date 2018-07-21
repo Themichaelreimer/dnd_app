@@ -1,0 +1,36 @@
+<!-- app/views/users/new.html.erb -->
+
+<h1>Create a Monsters Template!</h1>
+<div class=" container-fluid row control-label center-col">
+  <div class="card main-card col-md-4 offset-md-4 ">
+    <%= form_for :template, html:{multipart: true}, url: '/templates' do |f| %>
+
+    Name: <%= f.text_field :name %>
+    Description: <%= f.text_field :desc %>
+
+    HP: <%= f.text_field :hp_s %>
+    AC: <%= f.text_field :ac_s %>
+    Speed: <%= f.text_field :speed %>
+
+    Str: <%= f.text_field :str_s %>
+    Dex: <%= f.text_field :dex_s %>
+    Con: <%= f.text_field :con_s %>
+    Int: <%= f.text_field :int_s %>
+    Wis: <%= f.text_field :wis_s %>
+    Cha: <%= f.text_field :cha_s %>
+
+    Saving Throws: <%= f.text_field :saving_throws %>
+    Skills: <%= f.text_field :skills %>
+    Senses: <%= f.text_field :senses %>
+    Abilities: <%= f.text_field :abilities %>
+    CR: <%= f.text_field :challenge %>
+
+    Actions: <%= f.text_field :actions %>
+
+    Image: <%= f.file_field :image %>
+
+    <%= f.submit "Submit" %>
+
+  <% end %>
+  </div>
+</div>

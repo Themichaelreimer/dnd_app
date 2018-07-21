@@ -1,0 +1,44 @@
+<div class="card border-primary mb-3 col-md-4" style="width:600px;">
+
+  <div class="card-header">
+    <h4 class="card-title"><%=@actor.name%> </h4>
+    <h5 class="card-subtitle mb-2 text-muted"><%= @actor.desc%>, Lv: <%=@actor.challenge%></h5>
+  </div>
+
+  <div class = "card-body">
+
+    <%= image_tag(@actor.image.url(:large), class:'card-img-top;center')%>
+
+    <div class="row">
+      <h4 class="col-md-4">HP: <%= @actor.cur_hp %> (Max: <%= @actor.hp%>)</h5>
+      <h4 class="col-md-4">AC: <%= @actor.ac %></h5>
+      <h4 class="col-md-4">Speed: <%= @actor.speed %></h5>
+    </div>
+
+    <div class="row">
+      <h5 class="col-md-2">STR: <%= @actor.str %></h5>
+      <h5 class="col-md-2">DEX: <%= @actor.dex %></h5>
+      <h5 class="col-md-2">CON: <%= @actor.con %></h5>
+      <h5 class="col-md-2">INT: <%= @actor.int %></h5>
+      <h5 class="col-md-2">WIS: <%= @actor.wis %></h5>
+      <h5 class="col-md-2">CHA: <%= @actor.cha %></h5>
+    </div>
+
+    <div>
+      <h3>Actions</h3>
+      <%= @actor.actions%>
+    </div>
+
+    <div>
+      <h3>Saving Throws</h3>
+      <%= @actor.saving_throws%>
+    </div>
+
+    <div class="row">
+
+    </div>
+
+    <%= render partial: 'damage_form', locals: {actor: @actor}%>
+
+  </div>
+</div>

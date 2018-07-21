@@ -1,0 +1,5 @@
+<% if template.image %>
+  <%= image_tag(template.image.url(:med))%>
+<% else %>
+  <img src="public/404.gif" height=256px height=256px alt="image not found">
+<% end %>

@@ -1,0 +1,8 @@
+
+<h1> My Battlefield </h1>
+
+<div class="container-fluid row" style="width:90%;">
+    <% @actors.each do |actor|%>
+        <%= render partial: 'actors', locals: {actor: actor}%>
+    <% end %>
+</div>

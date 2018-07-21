@@ -1,0 +1,39 @@
+<% if current_user %>
+
+      <% if !current_user.templates.exists?(template.id) %>
+        <div style="float:left">
+          <li>
+            <%= button_to "Favourite", favorite_path, method: :post, :class =>"btn btn-primary", params: { user: current_user, template: template } %>
+          </li>
+          <div style="clear:both;"></div>
+        </div>
+
+      <% else %>
+
+        <div style="float:left">
+          <li>
+            <%= button_to "Unfavourite", unfavorite_path, method: :post, :class =>"btn btn-primary", params: { user: current_user, template: template } %>
+          </li>
+          <div style="clear:both;"></div>
+        </div>
+
+      <% end %>
+
+    <li>
+      <%= link_to "Inspect", template, :class =>"btn btn-primary" %>
+    </li>
+
+    <div style="float:right">
+      <li>
+        <%= button_to "Spawn", create_monster_path, class:"btn btn-primary", params: { user: current_user, template: template} %>
+      </li>
+    </div>
+
+    <li>
+      <%= link_to "Delete", template, method: :delete, :class =>"btn btn-primary" %>
+    </li>
+
+  </ul>
+<% else %>
+  <h2>Log in to access options!<h2>
+<% end %>

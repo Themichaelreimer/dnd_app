@@ -1,0 +1,27 @@
+-content_for :javascript_includes do
+	= javascript_include_tag 'jquery.raty.js', 'letsrate.js'
+
+.jumbotron
+	%h1= @user.email
+	- if !current_user || (current_user == @user)
+		%p= rating_for @user, 'rating', half_show: true, readonly: true
+	- else
+		%p= rating_for @user, 'rating', half_show: true, readonly: false, disable_after_rate: false 
+	%p= link_to 'Back', root_path, class: 'btn btn-outline-dark'
+
+.container-fluid
+	.card-columns
+		- @products.each do |product|
+			.card
+				- if product.photos.attached?
+					.card-img-top
+						.photo-wrapper
+							%div= image_tag product.photos.first.variant(resize: '320x320')
+				.card-body
+					%h5.card-title= product.title
+					%h6.card-subtitle.mb-2= "$#{product.price}"
+					%p.card-text= product.description
+					= link_to 'View', product_path(product), class: 'button'
+					- if product.user == current_user
+						=link_to 'Edit', edit_product_path(product), class: 'button'
+						=link_to 'Delete', product_path(product), class: 'btn btn-outline-danger', method: :delete, data: {confirm: 'Are you sure?' }

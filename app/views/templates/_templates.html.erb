@@ -1,0 +1,22 @@
+<div class="card main-card border-primary mb-3 col-md-3">
+
+  <div class="card-header bg-faded">
+    <span><h4 class="card-title"><%=template.name%>; Lv:&nbsp;<%=template.challenge%> </h4>
+  </div>
+
+  <div class = "card-body">
+
+    <div class="card">
+      <%= render "shared/image-med-partial", template: template%>
+    </div>
+
+    <ul class="card-block container">
+      <div>
+        <span><h5>HP: <%= template.hp_s %>
+        AC: <%=template.ac_s%></h5></span>
+      </div>
+
+      <%= render "card-footer", template: template %>
+    </ul>
+  </div>
+</div>

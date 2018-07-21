@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <div class="navbar-collapse collapse ">
+    <ul class="navbar-nav mr-auto">
+
+        <span><li class="nav-item"><%= link_to "My Battlefield", '/actors#index', class:"nav-link"%></li></span>
+        <span><li class="nav-item"><%= link_to "Spawn Monsters", '/templates#index', class:"nav-link"%></li></span>
+        <span><li class="nav-item"><%= link_to "Make Custom Template", '/templates/new', class:"nav-link"%></li></span>
+
+        <form class="navbar-search">
+          <input type="text" class="search-query" placeholder="Search coming soon">
+        </form>
+
+      <% if current_user %>
+
+        <span><li class="nav-item disabled nav-link"> <a>Signed in as <%= current_user.name %> </a> </li></span>
+        <span><li class="nav-item nav-link"> <%= link_to "Logout", '/logout' %> </li></span>
+      <% else %>
+        <span><%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/signup' %></span>
+      <% end %>
+
+    </ul>
+  </div>
+</nav>
